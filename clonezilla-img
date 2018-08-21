@@ -1,7 +1,4 @@
-This image was saved by Clonezilla at 2018-07-19 09:25:12 UTC.
-Saved by clonezilla-live-2.5.5-38-i686.
-The log during saving:
-----------------------------------------------------------
+
 Starting /usr/sbin/ocs-sr at 2018-07-19 09:20:38 UTC...
 *****************************************************.
 Clonezilla image dir: /home/partimag
@@ -85,3 +82,8 @@ Finished!
 Finished!
 ### End of log ###
 ### Image created time: 2018-0719-0925
+
+
+
+by
+mssr
