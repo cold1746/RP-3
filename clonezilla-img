@@ -1,0 +1,87 @@
+This image was saved by Clonezilla at 2018-07-19 09:25:12 UTC.
+Saved by clonezilla-live-2.5.5-38-i686.
+The log during saving:
+----------------------------------------------------------
+Starting /usr/sbin/ocs-sr at 2018-07-19 09:20:38 UTC...
+*****************************************************.
+Clonezilla image dir: /home/partimag
+Shutting down the Logical Volume Manager
+Finished Shutting down the Logical Volume Manager
+The selected devices: sda
+PS. Next time you can run this command directly:
+/usr/sbin/ocs-sr -q2 -c -j2 -z1 -i 4096 -sfsck -senc -p reboot savedisk tckiosk sda
+*****************************************************.
+The selected devices: sda
+Searching for data/swap/extended partition(s)...
+The data partition to be saved: sda1
+The selected devices: sda1
+The following step is to save the hard disk/partition(s) on this machine as an image:
+*****************************************************.
+Machine: C CLASS
+sda (1025MB_1GB_ATA_Flash_Di_1GB_ATA_Flash_Disk_C181129690A10d6BB96V)
+sda1 (972.7M_ext4(In_1GB_ATA_Flash_Di)_1GB_ATA_Flash_Disk_C181129690A10d6BB96V)
+*****************************************************.
+-> "/home/partimag/tckiosk".
+Shutting down the Logical Volume Manager
+Finished Shutting down the Logical Volume Manager
+Saving block devices info in /home/partimag/tckiosk/blkdev.list...
+Saving block devices attributes in /home/partimag/tckiosk/blkid.list...
+Checking the integrity of partition table in the disk /dev/sda... 
+Reading the partition table for /dev/sda...RETVAL=0
+*****************************************************.
+The first partition of disk /dev/sda starts at 63.
+Saving the hidden data between MBR (1st sector, i.e. 512 bytes) and 1st partition, which might be useful for some recovery tool, by:
+dd if=/dev/sda of=/home/partimag/tckiosk/sda-hidden-data-after-mbr skip=1 bs=512 count=62
+62+0 records in
+62+0 records out
+31744 bytes (32 kB, 31 KiB) copied, 0.0175745 s, 1.8 MB/s
+*****************************************************.
+Saving the MBR data for sda...
+1+0 records in
+1+0 records out
+512 bytes copied, 0.00722026 s, 70.9 kB/s
+Starting saving /dev/sda1 as /home/partimag/tckiosk/sda1.XXX...
+/dev/sda1 filesystem: ext4.
+*****************************************************.
+*****************************************************.
+Use partclone with gzip to save the image.
+Image file will be split with size limit 4096 MB.
+*****************************************************.
+If this action fails or hangs, check:
+* Is the disk full ?
+*****************************************************.
+Run partclone: partclone.ext4 -z 10485760 -N -L /var/log/partclone.log -c -s /dev/sda1 --output - | gzip -c --fast --rsyncable | split -a 2 -b 4096MB - /home/partimag/tckiosk/sda1.ext4-ptcl-img.gz. 2> /tmp/split_error.YH8x8f
+Partclone v0.3.11 http://partclone.org
+Starting to clone device (/dev/sda1) to image (-)
+Reading Super Block
+memory needed: 21002649 bytes
+bitmap 31125 bytes, blocks 2*10485760 bytes, checksum 4 bytes
+Calculating bitmap... Please wait... 
+done!
+File system:  EXTFS
+Device size:    1.0 GB = 248999 Blocks
+Space in use: 169.0 MB = 41251 Blocks
+Free Space:   850.9 MB = 207748 Blocks
+Block size:   4096 Byte
+Total block 248999
+Syncing... OK!
+Partclone successfully cloned the device (/dev/sda1) to the image (-)
+>>> Time elapsed: 90.26 secs (~ 1.504 mins)
+*****************************************************.
+Finished saving /dev/sda1 as /home/partimag/tckiosk/sda1.ext4-ptcl-img.gz
+*****************************************************.
+End of saveparts job for image /home/partimag/tckiosk.
+*****************************************************.
+*****************************************************.
+End of savedisk job for image tckiosk.
+Partition table file for disk was found: sda
+MBR file for this disk was found: sda
+[1;33mThe image of this partition is restorable: sda1
+[0;39m[1;33mAll the images of partition or LV devices in this image were checked and they are restorable: tckiosk
+[0;39mChecking if udevd rules have to be restored...
+This program is not started by Clonezilla server, so skip notifying it the job is done.
+This program is not started by Clonezilla server, so skip notifying it the job is done.
+Finished!
+Finished!
+### End of log ###
+### Image created time: 2018-0719-0925
